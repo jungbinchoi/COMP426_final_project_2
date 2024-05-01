@@ -4,6 +4,7 @@ import Grid from "./Grid";
 import Keypad from "./Keypad";
 import DoneModal from "./DoneModal";
 import HintButton from "./HintButton";
+import Score from "./Score";
 
 export default function Game({ answer }) {
   const { currentGuess, handleKeyup, guesses, isCorrect, turn, usedKeys } =
@@ -41,6 +42,7 @@ export default function Game({ answer }) {
         Restart
       </button>
       <Keypad usedKeys={usedKeys} />
+      <Score isCorrect={isCorrect} turn={turn} />
       {showDoneModal && (
         <DoneModal isCorrect={isCorrect} turn={turn} answer={answer} />
       )}
