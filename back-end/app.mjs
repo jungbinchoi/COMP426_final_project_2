@@ -62,7 +62,7 @@ app.put("/score", async (req, res) => {
     return;
   }
 
-  res.json({ guesses: rseult });
+  res.json({ guesses: result });
 });
 
 app.listen(port, () => {

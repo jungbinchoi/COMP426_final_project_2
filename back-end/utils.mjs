@@ -79,8 +79,10 @@ export class Utils {
 
   static async getScores() {
     try {
-      let result = await db.all("SELECT count FROM scores ORDER BY number ASC");
-      return result.map((c) => c.count);
+      let result = await db.all(
+        "SELECT amount FROM scores ORDER BY number ASC"
+      );
+      return result.map((c) => c.amount);
     } catch (e) {
       console.error(e);
       return null;
