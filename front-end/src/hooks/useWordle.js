@@ -115,7 +115,19 @@ const useWordle = (answer) => {
     }
   };
 
-  return { turn, currentGuess, guesses, isCorrect, handleKeyup, usedKeys };
+  const handleReset = () => {
+    window.location.reload();
+  };
+
+  return {
+    turn,
+    currentGuess,
+    guesses,
+    isCorrect,
+    handleKeyup,
+    usedKeys,
+    handleReset,
+  };
 };
 
 export default useWordle;

@@ -3,6 +3,7 @@ import useWordle from "../hooks/useWordle";
 import Grid from "./Grid";
 import Keypad from "./Keypad";
 import DoneModal from "./DoneModal";
+import HintButton from "./HintButton";
 
 export default function Game({ answer }) {
   const { currentGuess, handleKeyup, guesses, isCorrect, turn, usedKeys } =
@@ -34,7 +35,11 @@ export default function Game({ answer }) {
     <div>
       <div>Current Solution: {answer}</div>
       <div>Current Guess: {currentGuess}</div>
+      <HintButton />
       <Grid currentGuess={currentGuess} guesses={guesses} turn={turn} />
+      <button id="reset-button" onClick={() => window.location.reload()}>
+        Restart
+      </button>
       <Keypad usedKeys={usedKeys} />
       {showDoneModal && (
         <DoneModal isCorrect={isCorrect} turn={turn} answer={answer} />
