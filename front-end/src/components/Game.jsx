@@ -34,13 +34,11 @@ export default function Game({ answer }) {
 
   return (
     <div>
-      <div>Current Solution: {answer}</div>
-      <div>Current Guess: {currentGuess}</div>
-      <HintButton />
-      <Grid currentGuess={currentGuess} guesses={guesses} turn={turn} />
       <button id="reset-button" onClick={() => window.location.reload()}>
         Restart
       </button>
+      <Grid currentGuess={currentGuess} guesses={guesses} turn={turn} />
+      <HintButton />
       <Keypad usedKeys={usedKeys} />
       <Score isCorrect={isCorrect} turn={turn} />
       {showDoneModal && (

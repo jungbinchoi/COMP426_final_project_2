@@ -34,12 +34,20 @@ export default function Score({ isCorrect, turn }) {
 
   return (
     <div id="scoreboard">
-      {scores.map((score, i) => (
-        <div key={i} className="score-row">
-          <p>{i + 1}</p>
-          <p>{score}</p>
-        </div>
-      ))}
+      <table>
+        <tbody>
+          <tr>
+            <td># of Guesses</td>
+            <td>Frequency</td>
+          </tr>
+          {scores.map((score, i) => (
+            <tr key={i} className="score-row">
+              <td>{i + 1}</td>
+              <td>{score}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
